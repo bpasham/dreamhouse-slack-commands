@@ -16,7 +16,21 @@ exports.formatProperties = properties => {
             fields.push({title: "Price", value: `${numeral(property.get("Price__c")).format('$0,0')}`, short:true});
             attachments.push({
                 color: color,
-                fields: fields
+                fields: fields,
+                actions: [
+                    {
+                        "name": "broker",
+                        "text": "Broker Ingo",
+                        "type": "button",
+                        "value": "broker"
+                    },
+                    {
+                        "name": "schedule",
+                        "text": "Schedule Visit",
+                        "type": "button",
+                        "value": "visit"
+                    },
+                ]
             });
         });
         return attachments;
